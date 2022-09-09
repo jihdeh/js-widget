@@ -1,0 +1,27 @@
+{
+  "name": "preact-widget",
+  "version": "1.0.0",
+  "description": "A simple prototype widget",
+  "main": "index.js",
+  "scripts": {
+    "serve": "sirv build --port 8080 --cors --single",
+    "dev": "preact watch",
+    "build": "webpack --config webpack.config.js --env.ENV=development",
+    "start": "webpack-dev-server --env development --open",
+    "build-release": "webpack --config webpack.config.js --env production --env ENV=production --display-modules",
+    "build-staging": "webpack --config webpack.config.js --env ENV=staging --display-modules",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "preact-cli": "^3.4.1",
+    "sirv-cli": "^2.0.2",
+    "url-loader": "^4.1.1",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "preact": "^10.10.6",
+    "preact-render-to-string": "^5.2.3"
+  }
+}

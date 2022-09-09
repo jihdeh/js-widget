@@ -1,28 +1,6 @@
 <html>
-  <head>
-    <title>Consumer</title>
-    <script>
-      (function (w, d, s, o, f, js, fjs) {
-        w["JS-Widget"] = o;
-        w[o] =
-          w[o] ||
-          function () {
-            (w[o].q = w[o].q || []).push(arguments);
-          };
-        (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
-        js.id = o;
-        js.src = f;
-        js.async = 1;
-        fjs.parentNode.insertBefore(js, fjs);
-      })(window, document, "script", "mw", "./widget.js");
-      mw("init", { someConfiguration: 42, element: "widget" });
-      mw("message", "Hello world!");
-    </script>
-  </head>
   <body>
     <p>This is a page that will include the widget</p>
     <button id="widget">CLICK ME TO POPUP</button>
-
-    <!-- <div id="widget" class="widget">OUR WIDGET WILL BE RENDERED HERE</div> -->
   </body>
 </html>

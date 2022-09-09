@@ -1,0 +1,60 @@
+.modaloverlay {
+  background: rgba(0, 0, 0, 0.8) !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  top: 0 !important;
+  -webkit-transition: opacity 400ms ease-in !important;
+  -moz-transition: opacity 400ms ease-in !important;
+  transition: opacity 400ms ease-in !important;
+  z-index: -1 !important;
+  display: none !important;
+}
+.modaloverlay:target {
+  display: block !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: 99999 !important;
+}
+.modaloverlay .modal {
+  background-color: white !important;
+  height: 100% !important;
+  position: relative !important;
+  margin: 0 auto !important;
+  padding: 3em !important;
+  overflow-y: scroll !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+@media (min-width: 60em) {
+  .modaloverlay .modal {
+    height: 90% !important;
+    margin: 5% auto !important;
+    max-height: 57em !important;
+    max-width: 66em !important;
+    width: 85% !important;
+  }
+}
+.modaloverlay .modal > iframe, .modaloverlay .modal > div {
+  border: none !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.modaloverlay .close {
+  padding: 8px 12px !important;
+  position: absolute !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  top: 0 !important;
+  z-index: 1 !important;
+  color: rgb(146, 27, 27) !important;
+  line-height: 50px !important;
+  font-size: 80% !important;
+}
+
+.modaloverlay .close {
+  color: black !important;
+}

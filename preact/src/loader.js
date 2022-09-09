@@ -1,5 +1,7 @@
+// import { Configurations } from './models';
+
 const MethodNames = 'init';
-const DEFAULT_NAME = '_cvt';
+export const DEFAULT_NAME = '_cvt';
 
 /**
  * Loads widget instance.
@@ -9,10 +11,9 @@ const DEFAULT_NAME = '_cvt';
  * @param scriptElement The script tag that includes installation script and triggered loader.
  * @param render A method to be called once initialization done and DOM element for hosting widget is ready.
  */
-var Convrrt = function (win, defaultConfig, scriptElement, render) {
+export default (win, defaultConfig, scriptElement, render) => {
   // get a hold of script tag instance, which has an
   // attribute `id` with unique identifier of the widget instance
-  console.log('ass')
   const instanceName =
     scriptElement?.attributes.getNamedItem('id')?.value ?? DEFAULT_NAME;
   const loaderObject = win[instanceName];
@@ -51,7 +52,7 @@ var Convrrt = function (win, defaultConfig, scriptElement, render) {
         }
 
         if (!loadedObject.appId) {
-          throw new Error('public key is required to initiate');
+          throw new Error('Convrrt public key is required to initiate');
         }
 
         // the actual rendering of the widget
@@ -70,7 +71,7 @@ var Convrrt = function (win, defaultConfig, scriptElement, render) {
           win.document.createElement('div')
         );
         targetElement.setAttribute('id', `widget-${instanceName}`);
-        // render(targetElement, loadedObject);
+        render(targetElement, loadedObject);
 
         // store indication that widget instance was initialized
         win[`loaded-${instanceName}`] = true;
@@ -93,4 +94,4 @@ var Convrrt = function (win, defaultConfig, scriptElement, render) {
         console.warn(`Unsupported method [${method}]`, args);
     }
   };
-}
+};

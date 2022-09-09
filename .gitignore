@@ -31,3 +31,6 @@ debug.log
 .vscode
 
 dump.rdb
+
+/*.log
+dist
