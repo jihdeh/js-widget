@@ -50,7 +50,7 @@ export default class App extends Component {
     }
 
     return (
-      <div id={style.app}>
+      <span id={style.app}>
         <ConfigProvider config={this.props}>
           <Service
             appId={this.props.appId}
@@ -65,7 +65,7 @@ export default class App extends Component {
             <View />
           )}
         </ConfigProvider>
-      </div>
+      </span>
     );
   }
 }

@@ -11,7 +11,10 @@ export default (props) => {
     // Trigger your effect
     getContents(appId)
       .then((result) => {
-        updateContentState(result.data);
+        console.log(result.data);
+        updateContentState({
+          contents: result.data
+        });
         onDataLoaded();
       })
       .catch(() => {
